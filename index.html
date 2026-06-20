@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 Días de Paz y Seguridad</title>
+    <style>
+        /* Estilos CSS integrados para un diseño limpio y relajante */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #334155;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phrase-container {
+            min-height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        #phrase {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #475569;
+            font-style: italic;
+            font-weight: 400;
+            transition: opacity 0.2s ease-in-out;
+            opacity: 1;
+        }
+
+        button {
+            background-color: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+            transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            background-color: #0284c7;
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Tu Refugio de Calma</h1>
+        <p class="subtitle">14 Días de Inspiración</p>
+        
+        <div class="phrase-container">
+            <p id="phrase">Presiona el botón para recibir tu recordatorio de paz de hoy.</p>
+        </div>
+
+        <button id="btn-generator">Recibir Inspiración</button>
+    </div>
+
+    <script>
+        // Lógica de JavaScript integrada
+        const phrases = [
+            "La paz no es la ausencia de tormentas, sino la calma que vive dentro de tu corazón.",
+            "Estás a salvo aquí y ahora. Inhala paz, exhala todo lo que no puedes controlar.",
+            "Confía en tu capacidad para superar los días grises; tu fortaleza es más grande de lo que crees.",
+            "Tu seguridad no depende de lo que ocurre afuera, sino de la certeza de quién eres por dentro.",
+            "Permítete descansar. El mundo puede esperar, pero tu bienestar siempre es la prioridad.",
+            "Cada paso que das con calma, por pequeño que parezca, te acerca a un lugar de mayor estabilidad.",
+            "El pasado ya cumplió su propósito y el futuro es solo una idea. Este momento exacto es tu refugio.",
+            "Abraza la incertidumbre con la firme convicción de que siempre encuentras la manera de salir adelante.",
+            "Que tu mente sea un jardín de pensamientos amables y compasivos contigo el día de hoy.",
+            "No necesitas resolver toda tu vida hoy. Solo enfócate en dar el siguiente paso con tranquilidad.",
+            "Eres el ancla de tu propia realidad. Mantente firme, porque esta tormenta también pasará.",
+            "Regálate un momento de silencio y recuerda que todas las respuestas que buscas ya habitan en ti.",
+            "Tu paz mental es sagrada. Tienes el derecho absoluto de poner límites para protegerla.",
+            "Hoy elijo soltar el peso de las preocupaciones y vestirme con la certeza de que todo estará bien."
+        ];
+
+        const phraseElement = document.getElementById('phrase');
+        const btnElement = document.getElementById('btn-generator');
+
+        btnElement.addEventListener('click', () => {
+            // Animación simple de desvanecimiento al cambiar la frase
+            phraseElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * phrases.length);
+                phraseElement.textContent = phrases[randomIndex];
+                phraseElement.style.opacity = 1;
+            }, 200);
+        });
+    </script>
+</body>
+</html>
